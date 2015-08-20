@@ -1,0 +1,57 @@
+Travis rules!
+
+<p id="html_question">What does HTML stand for?</p>
+<button onclick="showAnswer1();">Answer</button>
+
+<p id="css_question">What does CSS stand for?</p>
+<button onclick="showAnswer2();">Answer</button>
+
+<p id="peek-a-boo">Where's that guy?</p>
+
+<p id="math">2 + 2 = ?</p>
+<button id="math_is_hard">Add It!</button>
+
+<p id="nowred">This text will be red.</p>
+<p id="nowblue">This text will be blue.</p>
+<p id="wasgray" class="gray">This text was gray.</p>
+
+<button id="changestyles">Change the Styles</button>
+
+<script>
+
+	function showAnswer1() {
+		document.getElementById('html_question').innerHTML = "Hypertext Markup Language";
+	}
+
+	function showAnswer2() {
+		document.getElementById('css_question').innerHTML = "Cascading Style Sheets";
+	}
+
+	$(document).ready(function(){
+		$('#peek-a-boo').click(function(){
+			$(this).html("Here I am!");
+		});
+		$('#math_is_hard').click(function(){
+			$('#math').html(4);
+		});
+		$("#changestyles").click(function(){
+	        $("#nowred").css({"color":"red"});
+	        $("#nowblue").toggleClass("blue");
+	        $("#wasgray").toggleClass("gray");
+    	});
+	})
+</script>
+
+<style>
+	.blue {
+	    color: blue;
+	}
+
+	.gray {
+	    color: gray;
+	}
+</style>
+
+
+
+
